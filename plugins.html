@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voidrework | Плагины и моды</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="bg-blocks">
+    <div class="block block-1"></div>
+    <div class="block block-2"></div>
+    <div class="block block-3"></div>
+    <div class="block block-4"></div>
+    <div class="block block-5"></div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">VR</div>
+        <span class="logo-text">Voidrework</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav_home">Главная</a>
+        <a href="plugins.html" class="active" data-i18n="nav_catalog">Каталог</a>
+        <a href="order.html" data-i18n="nav_order">Заказ</a>
+        <a href="#contacts" data-i18n="nav_contacts">Контакты</a>
+        <button class="nav-cart" id="cartBtn" aria-label="Корзина">
+          <span class="cart-icon">🧺</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </nav>
+      <div class="header-controls">
+        <label for="langSelect" class="control-label" data-i18n="language_label">Язык:</label>
+        <select id="langSelect">
+          <option value="ru" data-i18n="lang_ru">Русский</option>
+          <option value="uz" data-i18n="lang_uz">Узбекский</option>
+          <option value="en" data-i18n="lang_en">Английский</option>
+          <option value="kz" data-i18n="lang_kz">Казахский</option>
+          <option value="cn" data-i18n="lang_cn">Китайский</option>
+        </select>
+        <label for="currencySelect" class="control-label" data-i18n="currency_label">Валюта:</label>
+        <select id="currencySelect">
+          <option value="RUB">₽ RUB</option>
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+          <option value="KZT">₸ KZT</option>
+          <option value="UZS">soʻm UZS</option>
+          <option value="CNY">¥ CNY</option>
+        </select>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="catalog-header reveal">
+    <div class="container">
+      <h1 class="section-title" data-i18n="catalog_title">Плагины и моды</h1>
+      <p class="section-sub" data-i18n="catalog_sub">Выбирай товар, нажми «Купить» или подробнее, чтобы оформить заказ.</p>
+    </div>
+  </section>
+
+  <section class="catalog reveal">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Все</button>
+        <button class="filter-btn" data-filter="Плагин" data-i18n="filter_plugin">Плагины</button>
+        <button class="filter-btn" data-filter="Мод" data-i18n="filter_mod">Моды</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Товары заполняются JS -->
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="contacts" style="padding-top:50px;">
+    <div class="container">
+      <div class="contacts-grid">
+        <form class="contact-form reveal" id="contactForm">
+          <h2 class="section-title" data-i18n="contacts_title">Быстрая связь</h2>
+          <p class="section-sub" data-i18n="contacts_sub">Нужна помощь с выбором? Пиши в Telegram.</p>
+          <div class="form-group">
+            <label data-i18n="order_name">Имя</label>
+            <input type="text" name="name" placeholder="Как к тебе обращаться?" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="order_telegram">Telegram</label>
+            <input type="text" name="telegram" placeholder="@username" required />
+          </div>
+          <div class="form-group">
+            <label>Что нужно?</label>
+            <select name="topic" required>
+              <option value="">Выбери вариант</option>
+              <option>Купить плагин / мод</option>
+              <option>Заказать разработку под заказ</option>
+              <option>Настройка сервера</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Комментарий</label>
+            <textarea name="comment" placeholder="Расскажи подробнее..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" data-i18n="btn_send">Отправить заявку</button>
+        </form>
+        <div class="contact-info reveal">
+          <div class="info-card">
+            <span class="info-label" data-i18n="tg_channel">Телеграм канал</span>
+            <a href="https://t.me/voidrework" target="_blank">@voidrework</a>
+          </div>
+          <div class="info-card">
+            <span class="info-label" data-i18n="tg_me">Мой Telegram</span>
+            <a href="https://t.me/coderxdprhb" target="_blank">@coderxdprhb</a>
+          </div>
+          <div class="info-card">
+            <span class="info-label" data-i18n="tz">Часовой пояс</span>
+            <span data-i18n="tz_val">UTC+3 (Мск)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="logo footer-logo">
+        <div class="logo-mark">VR</div>
+        <span class="logo-text">Voidrework</span>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">&copy; 2026 Voidrework. Плагины и моды для Minecraft.</p>
+      <p class="footer-copy" data-i18n="footer_all">Все права защищены.</p>
+      <div class="footer-social">
+        <a href="https://t.me/voidrework" target="_blank">ТГК voidrework</a>
+        <a href="https://t.me/coderxdprhb" target="_blank">Мой ТГ</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" data-i18n="scroll_top">Наверх</button>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3 data-i18n="cart_title">Корзина</h3>
+      <button class="cart-close" id="cartClose">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" data-i18n="cart_empty">Корзина пуста</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span data-i18n="cart_total">Итого:</span>
+        <span class="cart-total-value" id="cartTotal">0 ₽</span>
+      </div>
+      <button class="btn btn-primary btn-full" id="cartCheckout" data-i18n="cart_checkout">Оформить заказ</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно товара -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="productModal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body">
+        <div class="modal-img" id="modalIcon">🧱</div>
+        <div>
+          <span class="category" id="modalCategory">Плагин</span>
+          <h3 id="modalTitle">Название</h3>
+          <p id="modalDesc">Описание товара.</p>
+          <span class="price" id="modalPrice" data-price="0">0 ₽</span>
+          <button class="btn btn-primary btn-full" id="modalAddBtn" data-i18n="btn_buy">Купить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
